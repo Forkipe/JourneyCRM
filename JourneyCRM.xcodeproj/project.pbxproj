@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C91330829DF53B200F6A7D4 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C91330729DF53B200F6A7D4 /* UsersView.swift */; };
+		0C91330A29DF550200F6A7D4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C91330929DF550200F6A7D4 /* User.swift */; };
+		0C91330E29E081DD00F6A7D4 /* SideMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C91330D29E081DD00F6A7D4 /* SideMenuItem.swift */; };
 		0CF8EDD229DED4E900B4589B /* JourneyCRMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF8EDD129DED4E900B4589B /* JourneyCRMApp.swift */; };
 		0CF8EDD429DED4E900B4589B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF8EDD329DED4E900B4589B /* ContentView.swift */; };
 		0CF8EDD629DED4EB00B4589B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CF8EDD529DED4EB00B4589B /* Assets.xcassets */; };
@@ -14,25 +17,26 @@
 		0CF8EDE129DEE0A300B4589B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0CF8EDE029DEE0A300B4589B /* FirebaseAuth */; };
 		0CF8EDE329DEE0A300B4589B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0CF8EDE229DEE0A300B4589B /* FirebaseFirestore */; };
 		0CF8EDE529DEE1C700B4589B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CF8EDE429DEE1C600B4589B /* GoogleService-Info.plist */; };
-		0CF8EDE729DEEA4300B4589B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF8EDE629DEEA4300B4589B /* MainView.swift */; };
+		0CF8EDE729DEEA4300B4589B /* JourneyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF8EDE629DEEA4300B4589B /* JourneyView.swift */; };
 		0CF8EDE929DEEADB00B4589B /* Journey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF8EDE829DEEADB00B4589B /* Journey.swift */; };
 		0CF8EDEB29DEEE3E00B4589B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF8EDEA29DEEE3E00B4589B /* DataManager.swift */; };
 		0CF8EDED29DEF4EA00B4589B /* NewJourney.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF8EDEC29DEF4EA00B4589B /* NewJourney.swift */; };
-		0CF8EDEF29DF2DE200B4589B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF8EDEE29DF2DE200B4589B /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C91330729DF53B200F6A7D4 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		0C91330929DF550200F6A7D4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0C91330D29E081DD00F6A7D4 /* SideMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuItem.swift; sourceTree = "<group>"; };
 		0CF8EDCE29DED4E900B4589B /* JourneyCRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JourneyCRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CF8EDD129DED4E900B4589B /* JourneyCRMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyCRMApp.swift; sourceTree = "<group>"; };
 		0CF8EDD329DED4E900B4589B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0CF8EDD529DED4EB00B4589B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CF8EDD829DED4EB00B4589B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0CF8EDE429DEE1C600B4589B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		0CF8EDE629DEEA4300B4589B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0CF8EDE629DEEA4300B4589B /* JourneyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyView.swift; sourceTree = "<group>"; };
 		0CF8EDE829DEEADB00B4589B /* Journey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journey.swift; sourceTree = "<group>"; };
 		0CF8EDEA29DEEE3E00B4589B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		0CF8EDEC29DEF4EA00B4589B /* NewJourney.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewJourney.swift; sourceTree = "<group>"; };
-		0CF8EDEE29DF2DE200B4589B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,11 +72,13 @@
 			isa = PBXGroup;
 			children = (
 				0CF8EDD129DED4E900B4589B /* JourneyCRMApp.swift */,
-				0CF8EDEE29DF2DE200B4589B /* Colors.swift */,
 				0CF8EDD329DED4E900B4589B /* ContentView.swift */,
-				0CF8EDE629DEEA4300B4589B /* MainView.swift */,
+				0CF8EDE629DEEA4300B4589B /* JourneyView.swift */,
+				0C91330729DF53B200F6A7D4 /* UsersView.swift */,
+				0C91330D29E081DD00F6A7D4 /* SideMenuItem.swift */,
 				0CF8EDEC29DEF4EA00B4589B /* NewJourney.swift */,
 				0CF8EDE829DEEADB00B4589B /* Journey.swift */,
+				0C91330929DF550200F6A7D4 /* User.swift */,
 				0CF8EDEA29DEEE3E00B4589B /* DataManager.swift */,
 				0CF8EDD529DED4EB00B4589B /* Assets.xcassets */,
 				0CF8EDE429DEE1C600B4589B /* GoogleService-Info.plist */,
@@ -169,10 +175,12 @@
 			files = (
 				0CF8EDE929DEEADB00B4589B /* Journey.swift in Sources */,
 				0CF8EDED29DEF4EA00B4589B /* NewJourney.swift in Sources */,
+				0C91330E29E081DD00F6A7D4 /* SideMenuItem.swift in Sources */,
 				0CF8EDEB29DEEE3E00B4589B /* DataManager.swift in Sources */,
-				0CF8EDEF29DF2DE200B4589B /* Colors.swift in Sources */,
 				0CF8EDD429DED4E900B4589B /* ContentView.swift in Sources */,
-				0CF8EDE729DEEA4300B4589B /* MainView.swift in Sources */,
+				0C91330A29DF550200F6A7D4 /* User.swift in Sources */,
+				0CF8EDE729DEEA4300B4589B /* JourneyView.swift in Sources */,
+				0C91330829DF53B200F6A7D4 /* UsersView.swift in Sources */,
 				0CF8EDD229DED4E900B4589B /* JourneyCRMApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,7 @@
 import SwiftUI
 let UIorange = UIColor(red: 0.7, green: 0.48, blue: 0, alpha: 1)
 let orange = Color(UIorange)
-struct HomeView:View {
+struct JourneyView:View {
     @State private var isExpanded = false
     @EnvironmentObject var dataManger:DataManager
     @State private var show = false
@@ -51,8 +51,8 @@ struct HomeView:View {
 }
 
 
-struct HomeView_Previews: PreviewProvider {
+struct JourneyView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView().environmentObject(DataManager())
+        JourneyView().environmentObject(DataManager())
     }
 }

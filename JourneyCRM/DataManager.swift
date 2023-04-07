@@ -9,21 +9,22 @@ import Firebase
 import SwiftUI
 
 class DataManager: ObservableObject {
+    let db = Firestore.firestore()
     @Published var journeys: [Journey] = []
-    
+    @Published var users: [User] = []
+    @Published var names = []
     init(){
-        fetchJourneys()
+        fetchData()
     }
     
-    func fetchJourneys() {
+    func fetchData() {
         journeys.removeAll()
-        let db = Firestore.firestore()
         let ref = db.collection("Journeys")
-        ref.getDocuments{ snapshot, error in
+        ref.getDocuments { snapshot, error in
             guard error == nil else {
-            print(error!.localizedDescription)
+                print(error!.localizedDescription)
                 return
-        }
+            }
             
             if let snapshot = snapshot {
                 for document in snapshot.documents {
@@ -39,9 +40,32 @@ class DataManager: ObservableObject {
                 }
             }
         }
+        users.removeAll()
+        let ref1 = db.collection("Users")
+        ref1.getDocuments{ snapshot, error in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            if let snapshot = snapshot {
+                for document in snapshot.documents {
+                    let data = document.data()
+                    let id = data["id"] as? String ?? ""
+                    let age = data["age"] as? String ?? ""
+                    let email = data["email"] as? String ?? ""
+                    let role = data["role"] as? String ?? ""
+                    let name = data["name"] as? String ?? ""
+                    
+                    let user = User(id: id, email: email, role: role, age: age, name: name)
+                    self.users.append(user)
+                }
+            }
+        }
     }
+    
+    
+    
     func addJourney(journeyStartPoint: String, journeyPassengers: String, journeyEndPoint: String, journeyId: String) {
-        let db = Firestore.firestore()
         let journeyData = ["startPoint": journeyStartPoint,
                            "passengers": journeyPassengers,
                            "endPoint": journeyEndPoint,
@@ -52,5 +76,25 @@ class DataManager: ObservableObject {
             }
         }
     }
-
+    
+    func addUser(userAge: String, userEmail:String, userRole:String, userId:String, userName: String){
+        let userData = [ "email": userEmail,
+                         "age": userAge,
+                         "role": userRole,
+                         "id": userId,
+                         "name": userName]
+        db.collection("Users").document(userId).setData(userData) { error in if let error = error {
+            print(error.localizedDescription)
+        }
+            
+        }
+    }
+    func editRole(userRole: String, userId: String){
+        let userrole = ["role": userRole]
+        db.collection("Users").document(userId).updateData(userrole) { error in if let error = error {
+            print(error.localizedDescription)
+        }
+        }
+    }
 }
+

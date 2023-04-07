@@ -8,14 +8,19 @@
 import SwiftUI
 import Firebase
 struct ContentView: View {
+    var roles = ["Administrator", "Driver", "Passenger"]
     @EnvironmentObject var dataManger:DataManager
     @State private var userIsLoggedIn = false
     @State private var email = ""
     @State private var password = ""
+    @State private var role = ""
+    @State private var age = ""
+    @State private var name = ""
+    @State private var id = ""
     
     var body: some View {
         if userIsLoggedIn{
-            HomeView()
+            UsersView()
         } else {
             content
         }
@@ -26,12 +31,13 @@ struct ContentView: View {
                 .ignoresSafeArea()
             RoundedRectangle(cornerRadius: 30, style: .continuous).rotationEffect(.degrees(135))
                 .offset(x:100,y:-300)
-                .foregroundStyle(LinearGradient(colors: [.white, .gray], startPoint: .topLeading, endPoint: .bottomTrailing))
+                .foregroundStyle(LinearGradient(colors: [.white, .gray], startPoint: .top, endPoint: .bottomTrailing))
             
             VStack {
                 Text("Welcome").offset(x:-95,y:-50)
                     .font(.system(size: 42, weight: .bold, design: .rounded))
-                    .foregroundColor(orange)
+                    .foregroundColor(.black)
+                
                 TextField("", text: $email)
                     .placeholder(when: email.isEmpty) {
                     Text("Email")
@@ -40,10 +46,25 @@ struct ContentView: View {
                     }.offset(x:20)
                     .textFieldStyle(.plain)
                     .foregroundColor(.white)
-                Rectangle()
-                    .offset(y:-10)
+
+                TextField("", text: $name)
+                    .placeholder(when: name.isEmpty) {
+                    Text("Name")
+                        .bold()
+                        .foregroundColor(.white)
+                    }.offset(x:20)
+                    .textFieldStyle(.plain)
                     .foregroundColor(.white)
-                    .frame(width:350, height:1)
+
+                TextField("", text: $age)
+                    .placeholder(when: age.isEmpty) {
+                    Text("Age")
+                        .bold()
+                        .foregroundColor(.white)
+                    }.offset(x:20)
+                    .textFieldStyle(.plain)
+                    .foregroundColor(.white)
+
                 SecureField("", text:$password).placeholder(when: password.isEmpty){
                     Text("Password")
                         .bold()
@@ -51,11 +72,19 @@ struct ContentView: View {
                 }.offset(x:20)
                     .textFieldStyle(.plain)
                     .foregroundColor(.white)
+                
                 Rectangle()
                     .foregroundColor(.white)
                     .frame(width:350, height:1)
+                
+                Picker("", selection: $role){
+                    ForEach(roles, id: \.self){
+                        Text($0)
+                    }
+                }.pickerStyle(SegmentedPickerStyle())
                 Button{
                     register()
+                    dataManger.addUser(userAge: age, userEmail: email, userRole: role, userId: uuid, userName: name)
                 } label: {
                     Text("Sign up")
                         .frame(width:200, height:40)
@@ -66,7 +95,7 @@ struct ContentView: View {
                 }
                 .padding(.top)
                 .offset(y:100)
-                Button{
+                Button {
                     login()
                 } label: {
                     Text("Already have an account?Login")
